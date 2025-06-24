@@ -16,21 +16,19 @@
         "build": "yarn convert && parcel build src/index.html && yarn build:sw",
         "convert": "node util/convert_xlsx_to_json.js && node util/convert_json_to_data.js",
         "test": "jest tests",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "deploy": "gh-pages -d dist"
     },
     "engines": {
         "node": "^20"
     },
     "browserslist": "> 0.5%, last 2 versions, not dead",
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^6.5.2",
-        "@parcel/core": "^2.12.0",
-        "@parcel/packager-raw-url": "2.12.0",
-        "@parcel/transformer-sass": "2.12.0",
-        "@parcel/transformer-webmanifest": "2.12.0",
+        "@fortawesome/fontawesome-free": "^6.7.2",
+        "@parcel/core": "^2.15.4",
         "@popperjs/core": "^2.11.8",
-        "@sentry/browser": "^7.118.0",
-        "bootstrap": "^5.3.3",
+        "@sentry/browser": "^7.120.3",
+        "bootstrap": "^5.3.7",
         "bootstrap-select": "^1.13.18",
         "bootstrap4": "npm:bootstrap@4.6.0",
         "date-fns": "^2.30.0",
@@ -38,14 +36,18 @@
         "html2canvas": "^1.4.1",
         "jquery": "3.7.1",
         "localforage": "^1.10.0",
-        "sass": "^1.77.6",
-        "workbox-cli": "^7.1.0",
+        "sass": "^1.89.2",
+        "workbox-cli": "^7.3.0",
         "xlsx": "^0.18.5"
     },
     "devDependencies": {
+        "@parcel/packager-raw-url": "2.15.4",
+        "@parcel/transformer-sass": "2.15.4",
+        "@parcel/transformer-webmanifest": "2.15.4",
+        "gh-pages": "^6.3.0",
         "husky": "^8.0.3",
         "jest": "^29.7.0",
-        "parcel": "^2.12.0",
+        "parcel": "^2.15.4",
         "prettier": "^2.8.8",
         "pretty-quick": "^3.3.1"
     }
