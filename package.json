@@ -12,12 +12,12 @@
     "scripts": {
         "start": "yarn convert && yarn start:noconvert",
         "start:noconvert": "parcel src/index.html",
-        "build:sw": "workbox generateSW ./src/workbox-config.js",
-        "build": "yarn convert && parcel build src/index.html && yarn build:sw",
         "convert": "node util/convert_xlsx_to_json.js && node util/convert_json_to_data.js",
+        "build:sw": "workbox generateSW ./src/workbox-config.js",
+        "build": "yarn convert && parcel build src/index.html --public-url ./ && yarn build:sw && echo 'anumeya.com' > dist/CNAME",
+        "deploy": "yarn build && gh-pages -f -d dist",
         "test": "jest tests",
-        "prepare": "husky install",
-        "deploy": "gh-pages -d dist"
+        "prepare": "husky install"
     },
     "engines": {
         "node": "^20"
